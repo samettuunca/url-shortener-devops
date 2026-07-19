@@ -17,7 +17,7 @@ jobs:
       - name: Docker image build et
         run: docker build -t url-shortener:${{ github.sha }} .
 
-      -- name: Trivy ile güvenlik taraması yap
+      - name: Trivy ile güvenlik taraması yap
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: url-shortener:${{ github.sha }}
