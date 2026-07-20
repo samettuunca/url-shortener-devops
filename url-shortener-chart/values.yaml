@@ -1,0 +1,26 @@
+appName: url-shortener
+
+replicaCount: 2
+
+image:
+  repository: url-shortener
+  tag: latest
+  pullPolicy: Never
+
+service:
+  port: 80
+  targetPort: 5000
+  type: NodePort
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "250m"
+    memory: "256Mi"
+
+healthCheck:
+  path: /health
+  initialDelaySeconds: 5
+  periodSeconds: 10

@@ -5,7 +5,13 @@ import sqlite3
 
 app = Flask(__name__)
 
+
 DB_PATH = "/app/data/urls.db"
+
+@app.route("/health")
+def health():
+    return jsonify({"durum": "ayakta"}), 200
+
 
 def veritabani_baslat():
     conn = sqlite3.connect(DB_PATH)
