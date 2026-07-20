@@ -1,6 +1,6 @@
 appName: url-shortener
 
-replicaCount: 2
+replicaCount: 3
 
 image:
   repository: url-shortener
