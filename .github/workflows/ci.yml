@@ -25,3 +25,10 @@ jobs:
           severity: CRITICAL,HIGH
           ignore-unfixed: true
           exit-code: 1
+
+      - name: Checkov ile IaC güvenlik taraması yap
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: url-shortener-chart/
+          framework: helm
+          soft_fail: true
