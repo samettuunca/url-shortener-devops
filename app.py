@@ -1,11 +1,12 @@
 from flask import Flask, request, redirect, jsonify
+from prometheus_flask_exporter import PrometheusMetrics
 import random
 import string
 import sqlite3
 
 app = Flask(__name__)
 
-
+metrics = PrometheusMetrics(app)
 DB_PATH = "/app/data/urls.db"
 
 @app.route("/health")

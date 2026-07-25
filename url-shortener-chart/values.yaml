@@ -24,3 +24,8 @@ healthCheck:
   path: /health
   initialDelaySeconds: 5
   periodSeconds: 10
+
+autoscaling:
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilization: 70
