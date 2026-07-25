@@ -26,6 +26,12 @@ spec:
             capabilities:
               drop:
                 - ALL
+          env:
+            - name: ADMIN_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: url-shortener-secrets
+                  key: admin_token
           resources:
             requests:
               cpu: {{ .Values.resources.requests.cpu }}
